@@ -19,7 +19,8 @@ rickroll_urls = [
   '/yarn.lock',
   '/package-lock.json',
   '/xmlrpc.php',
-  '/typo3'
+  '/typo3',
+  '/rickroll'
 ] # will rickroll people who follow (hacker and stuff)
 
 
@@ -46,8 +47,8 @@ def newpost():
 @app.errorhandler(404)
 def four_o_four(e):
   if request.path in rickroll_urls:
-    return redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
     print("just redirected somebody to a rickroll LOL")
+    return redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
   return "", 404
 
 app.run(host='0.0.0.0', port=80)
