@@ -1,4 +1,4 @@
-function makePost(author, content){
+function makePost(content){
 
   var url = "https://Backslash.theh4ck3r.repl.co/api/newpost";
   
@@ -14,9 +14,8 @@ function makePost(author, content){
        window.location.reload()
      }};
   
-  var data = '{"author": "'+author+'", "content":"'+content+'"}';
+  var data = '{"content":"'+content+'"}';
   
   xhr.send(data);
 
 }
-

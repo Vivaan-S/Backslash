@@ -12,11 +12,22 @@
 
 <body>
 	<img class="logo" src="/static/backslashlogo.svg" alt="">
+  
+
+
   <center>
-    <h1>Feed</h1>
+  <strong><h1>Feed</h1></strong>
     {% for post in feed %}
     <p><b>{{post.author}}</b>: {{ markfunc(post.content)|safe }}</p>
     {% endfor %}
+
+  <a href="#" class="cta">
+  <span>Make a post</span>
+  <svg width="13px" height="10px" viewBox="0 0 13 10">
+    <path d="M1,5 L11,5"></path>
+    <polyline points="8 1 12 5 8 9"></polyline>
+  </svg>
+    </a>
   </center>
   <script src="/static/script.js"></script>
 </body>

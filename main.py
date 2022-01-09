@@ -1,5 +1,9 @@
 from flask import Flask, render_template, redirect, request, abort
-import markdown, logging, click
+import markdown, logging, click, os
+from replit import db
+
+
+db["feed"] = []
 
 
 
@@ -20,7 +24,6 @@ click.secho = secho
 logging.getLogger('werkzeug').setLevel(logging.ERROR)
 app = Flask('Backslash', static_folder="static")
 from json import loads
-feed = []
 
 
 
@@ -77,9 +80,19 @@ def loginpage():
 		user_roles=request.headers['X-Replit-User-Roles']
   )
 
+@app.route('/clear')
+def cleardatabase():
+  if request.args["admincode"] == os.environ["admincode"]:
+    db.clear()
+    print("  - Database was cleared")
+    return "success"
+  print("  - Someone tried to clear the database, but failed")
+  return "failed"
+
+
 @app.route('/feed')
 def feedpage():
-  return render_template("feed.html", feed=feed, markfunc=markdown.markdown)
+  return render_template("feed.html", feed=db["feed"], markfunc=markdown.markdown)
 
 @app.route('/api/newpost', methods=["POST"])
 def newpost():
@@ -88,13 +101,13 @@ def newpost():
   if not request.headers['X-Replit-User-Name']:
     abort(403)
 
-  feed.insert(0,
+  db["feed"].insert(0,
   {
     "author": request.headers['X-Replit-User-Name'],
     "content": data["content"]
   },
   )
-  print("  - "+data["author"]+": "+data["content"])
+  print("  - "+request.headers['X-Replit-User-Name']+": "+data["content"])
   return "success"
 
 
