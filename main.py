@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, abort
+from flask import Flask, render_template, redirect, request, abort, make_response
 import markdown, logging, click, os
 from replit import db
 
@@ -110,6 +110,12 @@ def newpost():
   print("  - "+request.headers['X-Replit-User-Name']+": "+data["content"])
   return "success"
 
+@app.route('/logout')
+def logout():
+  resp = make_response(redirect("/"))
+  resp.set_cookie('REPL_AUTH', '', expires=0, domain=".backslash.theh4ck3r.repl.co")
+
+  return resp
 
 
 ###################################
