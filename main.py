@@ -56,7 +56,7 @@ rickroll_urls = [
 ###################################
 
 
-
+'''
 
 @app.route('/')
 def index():
@@ -100,20 +100,21 @@ def newpost():
 
 
 ###################################
-
+'''
 
 @app.errorhandler(404)
 def four_o_four(e):
   if request.path in rickroll_urls:
     print("  - Somebody was rickrolled")
     return redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-  return "", 404
+  return render_template("comingsoon.html")
 
+'''
 @app.errorhandler(403)
 def four_o_three(e):
   return "", 403
 
-
+'''
 
 ###################################
 ###################################
