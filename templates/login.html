@@ -1,0 +1,22 @@
+{% if not user_id %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Login</title>
+    <link href="/static/auth.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="login">
+      <h1>Welcome</h1>
+      <p>Login to Backslash with your Replit account here</p>
+      <script authed="location.reload()" src="/static/auth.js"></script>
+      <!--<div class="btn">Login</div>-->
+    </div>
+    <img class="svg" src="/static/authbg.svg" alt="bg svg">
+  </body>
+</html>
+{% else %}
+<h1>Hello, {{user_name}}</h1>
+{% endif %}
