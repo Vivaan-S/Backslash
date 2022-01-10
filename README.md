@@ -10,8 +10,8 @@
 * [Contributing](#contributing)
 
 ## Introduction
-Welcome to Backslash, a small side project that [Vivaan](https://youtube.com/channel/UCzuY7qNvGAfRqYdMJAxKb7g) and [Jeremiah](https://scratch.mit.edu/users/nwd4c4) started.
-We hope to make such a community that it would be safe enough for kids. Please help improve this file by making a pull request.
+Welcome to Backslash, a small side project that [Vivaan](https://youtube.com/channel/UCzuY7qNvGAfRqYdMJAxKb7g) and [Jeremiah](https://scratch.mit.edu/users/nwd4c4) started. It is a social media for developers to share ideas and projects. Our aim is to make a platform which helps people collaborate and help each other. We originally built Backslash as a medium for developers to connect and collaborate, but now it is easily usable by anybody.
+Please help improve this file by making a pull request.
 
 ## List of glorious people
 * [Vivaan](https://youtube.com/channel/UCzuY7qNvGAfRqYdMJAxKb7g)
