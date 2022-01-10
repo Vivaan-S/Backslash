@@ -10,7 +10,7 @@
 
 ## Introduction
 Welcome to Backslash, a small side project that [Vivaan](https://youtube.com/channel/UCzuY7qNvGAfRqYdMJAxKb7g) and [Jeremiah](https://scratch.mit.edu/users/nwd4c4) started. It is a social media for developers to share ideas and projects. Our aim is to make a platform which helps people collaborate and help each other. We originally built Backslash as a medium for developers to connect and collaborate, but now it is easily usable by anybody.
-Please help improve this file by making a pull request.
+Please help [improve this file](https://github.com/Vivaan-S/Backslash/edit/main/README.md).
 
 ## Contributing
 If you would like to become a developer of Backslash, please email us at contributing@backslash.am4.uk and list a few reasons why you would make a good team member.
