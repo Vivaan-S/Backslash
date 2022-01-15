@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  
+<img class="logo" src="/static/backslash-round.svg" alt="">
+  
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Backslash</title>
+	<title>Backslash - Feed</title>
 	<link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon">
 	<link rel="stylesheet" href="/static/style.css">
+  <script src="https://kit.fontawesome.com/305a55fd5c.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-	<img class="logo" src="/static/backslashlogo.svg" alt="">
   
-
-
-  <center>
-  <strong><h1>Feed</h1></strong>
-    {% for post in feed %}
-    <p><b>{{post.author}}</b>: {{ markfunc(post.content)|safe }}</p>
-    {% endfor %}
-
-  <a href="#" class="cta">
+  <!--<a href="#" class="cta">
   <span>Make a post</span>
   <svg width="13px" height="10px" viewBox="0 0 13 10">
     <path d="M1,5 L11,5"></path>
     <polyline points="8 1 12 5 8 9"></polyline>
   </svg>
-    </a>
+  </a>-->
+
+
+  <center>
+    {% for post in feed %}
+    <div class="card post">
+      <div class="post_content">{{ markfunc(escapefunc(post.content))|safe }}</div>
+      <div class="post_info">
+        <i class="fa-solid fa-thumbs-up"></i>
+        <i class="fa-solid fa-thumbs-down"></i>
+        <span class="post_author">-{{ post.author }}</span>
+      </div>
+    </div>
+    {% endfor %}
   </center>
+
+  
   <script src="/static/script.js"></script>
 </body>
 </html>

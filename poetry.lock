@@ -108,6 +108,18 @@ async = ["asgiref (>=3.2)"]
 dotenv = ["python-dotenv"]
 
 [[package]]
+name = "flask-limiter"
+version = "2.0.4"
+description = "Rate limiting for flask applications"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+Flask = ">=2"
+limits = ">=2"
+
+[[package]]
 name = "frozenlist"
 version = "1.2.0"
 description = "A list-like structure which implements collections.abc.MutableSequence"
@@ -160,6 +172,24 @@ MarkupSafe = ">=2.0"
 
 [package.extras]
 i18n = ["Babel (>=2.7)"]
+
+[[package]]
+name = "limits"
+version = "2.2.0"
+description = "Rate limiting utilities"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+all = ["redis (>3,<5.0.0)", "redis-py-cluster (>=2.0.0,<3)", "pymemcache (>3,<4.0.0)", "pymongo (>3,<5)", "coredis[hiredis] (>=2.0.0,<3)", "emcache (>=0.6.1)", "motor (>=2.5,<3)"]
+async-memcached = ["emcache (>=0.6.1)"]
+async-mongodb = ["motor (>=2.5,<3)"]
+async-redis = ["coredis[hiredis] (>=2.0.0,<3)"]
+memcached = ["pymemcache (>3,<4.0.0)"]
+mongodb = ["pymongo (>3,<5)"]
+redis = ["redis (>3,<5.0.0)"]
+rediscluster = ["redis-py-cluster (>=2.0.0,<3)"]
 
 [[package]]
 name = "markdown"
@@ -283,7 +313,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "720b5fe51c25bee25bb7936f5e6c5b6a60a25e60cdfac83549ac8743528106e5"
+content-hash = "0f632f089c7ee83cac140ab23b516a2100ad0430a797466a1cfe1f8bccd38845"
 
 [metadata.files]
 aiohttp = [
@@ -392,6 +422,11 @@ flask = [
     {file = "Flask-2.0.2-py3-none-any.whl", hash = "sha256:cb90f62f1d8e4dc4621f52106613488b5ba826b2e1e10a33eac92f723093ab6a"},
     {file = "Flask-2.0.2.tar.gz", hash = "sha256:7b2fb8e934ddd50731893bdcdb00fc8c0315916f9fcd50d22c7cc1a95ab634e2"},
 ]
+flask-limiter = [
+    {file = "Flask-Limiter-2.0.4.tar.gz", hash = "sha256:eafdd81f384e0c99fb24bd366354c66cd143ae78512aad9b60a501df3f52ddf4"},
+    {file = "Flask_Limiter-2.0.4-py3-none-any.whl", hash = "sha256:eea7012a8d422db18deb0d518bd94888ed1d22afd96747407ae78fe67773f32a"},
+    {file = "Flask_Limiter-2.0.4-py3.9.egg", hash = "sha256:40368a04ac3c997c5f9c96f792355fc09b37893385e57d2671c23ee8d1d657e9"},
+]
 frozenlist = [
     {file = "frozenlist-1.2.0-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:977a1438d0e0d96573fd679d291a1542097ea9f4918a8b6494b06610dfeefbf9"},
     {file = "frozenlist-1.2.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:a8d86547a5e98d9edd47c432f7a14b0c5592624b496ae9880fb6332f34af1edc"},
@@ -481,6 +516,10 @@ itsdangerous = [
 jinja2 = [
     {file = "Jinja2-3.0.3-py3-none-any.whl", hash = "sha256:077ce6014f7b40d03b47d1f1ca4b0fc8328a692bd284016f806ed0eaca390ad8"},
     {file = "Jinja2-3.0.3.tar.gz", hash = "sha256:611bb273cd68f3b993fabdc4064fc858c5b47a973cb5aa7999ec1ba405c87cd7"},
+]
+limits = [
+    {file = "limits-2.2.0-py3-none-any.whl", hash = "sha256:23de27dac64ed6cd741fec95b4542e7a003a35d7d881d45aa581409f9969e46f"},
+    {file = "limits-2.2.0.tar.gz", hash = "sha256:da6346f0dcf85f17f0f1cc709c3408a3058cf6fee68313c288127c287237b411"},
 ]
 markdown = [
     {file = "Markdown-3.3.6-py3-none-any.whl", hash = "sha256:9923332318f843411e9932237530df53162e29dc7a4e2b91e35764583c46c9a3"},

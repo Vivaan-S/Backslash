@@ -9,6 +9,7 @@ python = "^3.8"
 Flask = "^2.0.2"
 Markdown = "^3.3.6"
 replit = "^3.2.4"
+Flask-Limiter = "^2.0.4"
 
 [tool.poetry.dev-dependencies]
 

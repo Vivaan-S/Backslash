@@ -14,10 +14,10 @@
 		<!-- Header -->
 			<div id="header">
 				<span class="indexlogo"><img class="header-logo" src="static/Whiteandblue.png" alt="Backslash Logo"></span>
-				<h1>The only safe social media</h1>
-				<p>That's Backslash. Built for developers, by developers.</a>
+				<h1>Social media for developers</h1>
+				<p>That's Backslash. We're helping developers connect and collaborate</a>
 				<br />
-				<a href="/login">Login with Replit (feed for now -vs)</a></p>
+				<a href="/login">Login with Replit</a></p>
 			</div>
 
 		<!-- Main -->
@@ -41,14 +41,14 @@
 						<a href="#" class="image icon solid fa-lock"><img src="static/images/pic01.jpg" alt="" /></a>
 						<div class="content">
 							<h3>Secure</h3>
-							<p>Your posts are very secure in our database. We ensure you that nobody has access to your personal information. If you are concerned about your privacy contact us at <a href="mailto:vivaan@blabbr.xyz">vivaan@blabbr.xyz</a>.</p>
+							<p>Your posts are very secure in our database. We ensure you that nobody has access to your personal information. If you are concerned about your privacy contact us at <a href="mailto:support@backslash.am4.uk">support@backslash.am4.uk</a>.</p>
 						</div>
 					</section>
 					<section class="feature right">
 						<a href="#" class="image icon solid fa-code"><img src="static/images/pic02.jpg" alt="" /></a>
 						<div class="content">
 							<h3>Reliable</h3>
-							<p>All posts are immediatly saved in our database after they are posted, which NEVER loses data. Unlike other social media, we don't track your activity or have any sneaky trackers. You leave no footprint on this website, garunteed.</p>
+							<p>All posts are immediatly saved in our database after they are posted, which NEVER loses data. Unlike other social media, we don't track your activity or have any sneaky trackers. You leave no footprint on this website, guaranteed.</p>
 						</div>
 					</section>
 					<section class="feature left">
@@ -78,23 +78,25 @@
 
 					<p>You can contact us via this form or email us at <a href="mailto:support@backslash.am4.uk">support@backslash.am4.uk</a>. We reply quickly and are always happy to help!</p>
 
-					<form method="post" action="https://formsubmit.co/support@backslash.am4.uk">
+					<form method="POST" action="https://formsubmit.co/support@backslash.am4.uk">
 						<div class="row">
 							<div class="col-6 col-12-mobilep">
-								<input type="text" name="name" placeholder="Name" />
+								<input type="text" name="name" placeholder="Name" required />
 							</div>
 							<div class="col-6 col-12-mobilep">
-								<input type="email" name="email" placeholder="Email" />
+								<input type="email" name="email" placeholder="Email" required/>
 							</div>
 							<div class="col-12">
-								<textarea name="message" placeholder="Message" rows="6"></textarea>
+								<input type="text" name="message" placeholder="Message" rows="6" required></input>
 							</div>
 							<div class="col-12">
 								<ul class="actions special">
-									<li><input type="submit" value="Send Message" /></li>
+									<li><input type="submit" value="Send Message" required /></li>
 								</ul>
 							</div>
 						</div>
+            <input type="hidden" name="_next" value="https://backslash.am4.uk/#SUCCESS_YOUR_MESSAGE_HAS_BEEN_DELIVERED">
+            <input type="hidden" name="_template" value="table">
 					</form>
 					<ul class="icons">
 						<li><a href="https://github.com/Vivaan-S/Backslash" class="icon brands fa-github" target="__blank"><span class="label">Github</span></a></li>

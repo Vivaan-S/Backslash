@@ -6,18 +6,12 @@
   src: url("/static/AvenirLTStd-Black.otf");
 }
 
-
-body{
-  background-color: black;
-}
-
 .logo{
   width: 45px;
-  margin: 10px;
+  margin: 0px;
 }
 
 *{
-  color: white;
   font-family: 'Montserrat Alternates', sans-serif;
 }
 
@@ -26,11 +20,6 @@ body{
 }
 
 
-
-
-body {
-  display: grid;
-  color: #ffffff; }
 
 a {
   text-decoration: none;
@@ -48,7 +37,7 @@ a {
     left: 0;
     display: block;
     border-radius: 28px;
-    background: #42ffe9;
+    background: #26baa9;
     width: 56px;
     height: 56px;
     transition: all .3s ease; }
@@ -68,7 +57,7 @@ a {
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke: #ffffff;
+    stroke: #000000;
     stroke-width: 2;
     transform: translateX(-5px);
     transition: all .3s ease; }
@@ -79,3 +68,41 @@ a {
     transform: translateX(0); }
   .cta:active {
     transform: scale(0.96); }
+
+
+
+
+.card{
+  width: 450px;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.post_content{
+  text-align: center;
+  margin: 10px;
+  background: #d4d4d4;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.post_info{
+  layout: inline;
+  text-align: left;
+  color: #575757;
+}
+
+.post_info i{
+  font-size: 50px;
+  cursor: pointer;
+}
+
+
+.post_author{
+  float: right;
+  color: #000 !important;
+}

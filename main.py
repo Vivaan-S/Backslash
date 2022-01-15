@@ -1,10 +1,21 @@
+print("  - Loading...")
+
+
 from flask import Flask, render_template, redirect, request, abort, make_response
-import markdown, logging, click, os
-from replit import db
+import markdown, logging, click, os, schedule, time, requests
+from replit import db, web
+from html import escape
 
 
 db["feed"] = []
 
+def cleardb():
+  requests.get("https://backslash.am4.uk/clear?admincode="+os.environ["admincode"])
+def warnings():
+  print("- Remember: If you press the Ctrl+C or stop this process, it will clear the database.")
+
+schedule.every(4).minutes.do(warnings)
+schedule.every().sunday.at("23:59").do(cleardb)
 
 
 ###################################
@@ -24,6 +35,8 @@ click.secho = secho
 logging.getLogger('werkzeug').setLevel(logging.ERROR)
 app = Flask('Backslash', static_folder="static")
 from json import loads
+
+
 
 
 
@@ -92,7 +105,7 @@ def cleardatabase():
 
 @app.route('/feed')
 def feedpage():
-  return render_template("feed.html", feed=db["feed"], markfunc=markdown.markdown)
+  return render_template("feed.html", feed=db["feed"], markfunc=markdown.markdown, escapefunc=escape)
 
 @app.route('/api/newpost', methods=["POST"])
 def newpost():
@@ -104,7 +117,8 @@ def newpost():
   db["feed"].insert(0,
   {
     "author": request.headers['X-Replit-User-Name'],
-    "content": data["content"]
+    "content": data["content"],
+    "likers": [request.headers['X-Replit-User-Name']]
   },
   )
   print("  - "+request.headers['X-Replit-User-Name']+": "+data["content"])
@@ -113,7 +127,7 @@ def newpost():
 @app.route('/logout')
 def logout():
   resp = make_response(redirect("/"))
-  resp.set_cookie('REPL_AUTH', '', expires=0, domain=".backslash.theh4ck3r.repl.co")
+  resp.set_cookie('REPL_AUTH', '', expires=1, domain=".backslash.theh4ck3r.repl.co")
 
   return resp
 
@@ -124,7 +138,10 @@ def logout():
 @app.errorhandler(404)
 def four_o_four(e):
   if request.path in rickroll_urls:
-    print("  - Somebody was rickrolled")
+    if request.headers['X-Replit-User-Name']:
+      print("  - "+request.headers['X-Replit-User-Name']+" was rickrolled")
+    else:
+      print("  - Somebody was rickrolled")
     return redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
   return "", 404
 
@@ -138,7 +155,7 @@ def four_o_three(e):
 ###################################
 ###################################
 
-
+os.system('clear')
 
 print(
   """
